@@ -22,7 +22,7 @@ function Login() {
   return (
     
     <div>
-    <p ref-{errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+    
     <h1>Sign in</h1>
     <form>
     <label htmlFor="username">Username:</label>
@@ -40,3 +40,5 @@ function Login() {
 }
 
 export default Login;
+
+//<p ref-{errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
