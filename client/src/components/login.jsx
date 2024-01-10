@@ -1,12 +1,12 @@
 import { useRef, useEffect, useState, useContext } from "react";
 import AuthContext from "../context/AuthProvider";
-import axios from "./api/axios';
-const LOGIN_URL = '/auth';
+import axios from "./api/axios";
+const LOGIN_URL = "/auth";
 
 import "./login.css";
 
-function Login() {
-  const{ setAuth } = useContext(AuthContext);
+const Login = () => {
+  const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
 
@@ -25,17 +25,45 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user,pwd);
-    setUser('');
-    setPassword('');
-    setSuccess(true);
-  }
+    try {
+      const response = await axios.post(
+        LOGIN_URL,
+        JSON.stringify({ user, password }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
+      );
+      console.log(JSON.stringify(response?.data)); //check if there is a response 
+      const accessToken = response?.data?.accessToken;
+      const roles = response?.data?.roles; //should be an array of roles
+      setAuth({ user, password, roles, accessToken });
+      setUser('');
+      setPassword('');
+      setSuccess(true);
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg('No server response');
+      } else if (err.response?.status === 400) {
+        setErrMsg('Missing username or password');
+      } else if (err.response?.status === 401) {
+        setErrMsg('Unauthorised');
+      } else {
+        setErrMsg('Login failed');
+      }
+      errRef.current.focus();
+    }
+  };
 
   return (
-
     <div>
-    <p ref-{errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-
+      <p
+        ref={errRef}
+        className={errMsg ? "errmsg" : "offscreen"}
+        aria-live="assertive"
+      >
+        {errMsg}
+      </p>
 
       <h1>Sign in</h1>
       <form onSubmit={handleSubmit}>
@@ -69,7 +97,7 @@ function Login() {
       </div>
     </div>
   );
-}
+};
 
 export default Login;
 
