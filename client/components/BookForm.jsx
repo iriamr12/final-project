@@ -2,16 +2,16 @@ import React from 'react'
 import {useState} from "react";
 
 export default function BookForm(props){
-    const [book, setBook] = useState("");
+    const [title, setTitle] = useState("");
 
     const handleChange = (e) => {
-        setBook(e.target.value);
+        setTitle(e.target.value);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         props.getBookCb(title)
-        setBook("");
+        setTitle("");
     };
 
     return(
