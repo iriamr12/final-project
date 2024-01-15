@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, useContext } from "react";
 import AuthContext from "../context/AuthProvider";
-import axios from "./api/axios";
+import axios from "../api/axios";
 const LOGIN_URL = "/auth";
 
 import "./login.css";
@@ -20,11 +20,12 @@ const Login = () => {
   }, []);
 
   useEffect(() => {
-    setErrMsg("");
+    setErrMsg('');
   }, [user, password]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const response = await axios.post(
         LOGIN_URL,
@@ -57,48 +58,52 @@ const Login = () => {
 
   return (
     <div>
-      <p
-        ref={errRef}
-        className={errMsg ? "errmsg" : "offscreen"}
-        aria-live="assertive"
-      >
-        {errMsg}
-      </p>
+      {success ? (
+                <section>
+                    <h1>You are logged in!</h1>
+                    <br />
+                    <p>
+                        <a href="#">Go to Home</a>
+                    </p>
+                </section>
+            ) : (
+                <section>
+                    <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+                    <h1>Sign In</h1>
+                    <form onSubmit={handleSubmit}>
+                        <label htmlFor="username">Username:</label>
+                        <input
+                            type="text"
+                            id="username"
+                            ref={userRef}
+                            autoComplete="off"
+                            onChange={(e) => setUser(e.target.value)}
+                            value={user}
+                            required
+                        />
 
-      <h1>Sign in</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          ref={userRef}
-          autoComplete="off"
-          onChange={(e) => setUser(e.target.value)}
-          value={user}
-          required
-        />
-
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          ref={userRef}
-          autoComplete="off"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-          required
-        />
-
-        <button>Sign in</button>
-      </form>
-
-      <div className="signup-link">
-        <a href="/signup">Sign up</a>
-      </div>
-    </div>
+                        <label htmlFor="password">Password:</label>
+                        <input
+                            type="password"
+                            id="password"
+                            onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                            required
+                        />
+                        <button>Sign In</button>
+                    </form>
+                    <p>
+                        Need an Account?<br />
+                        <span className="line">
+                            {/*put router link here*/}
+                            <a href="#">Sign Up</a>
+                        </span>
+                    </p>
+                    </section>
+  )}
+            </div>
   );
 };
 
 export default Login;
 
-//<p ref-{errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
