@@ -35,15 +35,14 @@ const API_KEY = "AIzaSyDBN0k-cEvlnsLQj0YELqLD1ckFYMmPF4I";
 
     return(
       <div>
-        <h2>Google Books Search</h2>
-        <BookForm getBookCb = {(title) => getBook(title)}/>
-        <Books data={books}/>
-        {
-            loading && <h2>Loading...</h2>
-        }
-        {
-            error && <h2 style={{color: 'red'}}>{error}</h2>
-        }
+        <userContext.Provider value={user}>
+            <h2>Google Books Search</h2>
+            <BookForm getBookCb = {(title) => getBook(title)}/>
+            <Books data={books}/>
+            {loading && <h2>Loading...</h2>}
+            {error && <h2 style={{color: 'red'}}>{error}</h2>}
+        </userContext.Provider>
+        
     </div>
     ) 
 
