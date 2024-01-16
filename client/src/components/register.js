@@ -47,10 +47,15 @@ const register = () => {
 
     }, [pwd, matchPwd])
 
+    useEffect(() => {
+        setErrMsg('');
+
+    } [user, password, matchPwd])
+
   return (
-    <div>
+    <section>
       
-    </div>
+    </section>
   )
 }
 
