@@ -1,7 +1,6 @@
 import React from "react";
 import "./Navigation.css";
 import profilePhoto from "./1000_F_321955279_TeWobe24GeJ8RSFgbndcM0f6zEVu9P7S.jpg";
-import "boxicons";
 import profilePic from "./profile.png";
 import settingPic from "./setting.png";
 import userPic from "./user.png";
@@ -51,13 +50,13 @@ function Navigation() {
               <a href="#" className="sub-menu-link">
                 <img src={profilePic} className="mini-picture" />
                 <p>Edit profile</p>
-                <span>></span>
+                <span></span>
               </a>
 
               <a href="#" className="sub-menu-link">
                 <img src={settingPic} className="mini-picture" />
                 <p>Settings</p>
-                <span>></span>
+                <span></span>
               </a>
             </div>
           </div>
