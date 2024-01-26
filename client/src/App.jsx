@@ -1,23 +1,32 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Home from "./components/home";
-import Navigation from "./components/Navigation";
+import Lobby from "./components/Lobby";
 import Register from "./components/Register";
-import Login from "./components/login";
-import BookSearch from "./components/Booksearch";
+import {BrowserRouter, Routes, Route } from 'react-router-dom'
+import AuthContext from "./components/context/AuthenticationProvider";
+import { useState } from "react";
+import React from "react";
+import Login from "./components/Login";
+import axios from "axios";
+import AuthenticationProvider from "./components/context/AuthenticationProvider";
+import Homepage from "./components/homepage";
+function App(user){
 
-function App() {
-  return (
-    <>
-      <Navigation />
-      <Routes>
-        <Route path="/register" element={<Register />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/search" element={<BookSearch/>} />
-      </Routes>
-    </>
-  );
+
+    return(
+        <AuthenticationProvider>
+           <div>
+            <Routes>
+                <Route path="/" element={<Lobby/>}/>
+                <Route path="/register" element={<Register />} /> 
+                <Route path="/login" element={<Login />} />
+                <Route path="/homepage" element={<Homepage />} />
+                <Route path="/search" element={<BookSearch/>} />
+
+
+            </Routes>
+            </div> 
+            </AuthenticationProvider>
+      
+    ) 
+
 }
-
 export default App;
