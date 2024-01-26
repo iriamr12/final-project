@@ -1,10 +1,7 @@
-//ELLIE'S CODE
 // import { useRef, useEffect, useState, useContext } from "react";
-// import AuthContext from "./context/AuthentificationProvider";
+// import AuthContext from "../context/AuthProvider";
 // import axios from "../api/axios";
 // const LOGIN_URL = "/auth";
-// import { Link } from "react-router-dom";
-
 // import "./login.css";
 
 // const Login = () => {

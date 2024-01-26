@@ -19,6 +19,8 @@ function App(user){
                 <Route path="/register" element={<Register />} /> 
                 <Route path="/login" element={<Login />} />
                 <Route path="/homepage" element={<Homepage />} />
+                <Route path="/search" element={<BookSearch/>} />
+
 
             </Routes>
             </div> 
