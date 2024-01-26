@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Books from "./Books";
 import BookForm from "./BookForm";
+import "./Booksearch.css";
+import { Box, Button, Grid } from "@material-ui/core";
 
 function BookSearch() {
   const [loading, setLoading] = useState(false);
@@ -33,12 +35,23 @@ function BookSearch() {
 
   return (
     <>
-      <div>
-        <h2>Google Books Search</h2>
-        <BookForm getBookCb={(title) => getBook(title)} />
+      <div className="containers">
+        <div className="row justify-content-center">
+        <BookForm className='search' getBookCb={(title) => getBook(title)} /> 
         <Books data={books} />
         {loading && <h2>Loading...</h2>}
         {error && <h2 style={{ color: "red" }}>{error}</h2>}
+        
+          
+
+
+
+
+        
+        
+        </div>
+        
+        
       </div>
     </>
   );

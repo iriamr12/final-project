@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState} from "react";
+import './BookForm.css'
 
 export default function BookForm(props){
     const [title, setTitle] = useState("");
@@ -15,10 +16,10 @@ export default function BookForm(props){
     };
 
     return(
-        <form onSubmit={handleSubmit}>
+        <form className="searchBar" onSubmit={handleSubmit}>
             <input
             type="text"
-            placeholder='The Davinci Code'
+            placeholder='What are you searching for?'
             value = {title}
             onChange={handleChange}
             />
