@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import AddToFavoritesButton from './assets/AddToFavoritesButton'
+import AddToFavoritesButton from "./AddToFavoritesButton.jsx";
 
-
+// "9789029568913"
 const App = () => {
   const [favoriteBooks, setFavoriteBooks] = useState([]);
 
@@ -11,7 +11,6 @@ const App = () => {
 
   return (
     <div>
-      <h2>My Favorite Books</h2>
       {favoriteBooks.map((book, index) => (
         <div key={index}>{book.title}</div>
       ))}
