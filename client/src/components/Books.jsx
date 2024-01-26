@@ -13,7 +13,7 @@ export default function Books({ data }) {
           <p className="authors">AUTHORS</p>
           
           <a href={book.volumeInfo.previewLink}>
-            <img src={book?.volumeInfo?.imageLinks?.smallThumbnail} />
+            <img className="image" src={book?.volumeInfo?.imageLinks?.smallThumbnail} />
           </a>
           
         </div>
