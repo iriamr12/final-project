@@ -1,11 +1,14 @@
 import {useEffect, useRef, useState} from "react";
 import "./BookViewer.css"
 import {useSearchParams} from "react-router-dom";
+import { useParams } from 'react-router-dom'
 export const BookViewer = () => {
     const [searchParams, setSearchParams] = useSearchParams();
 
     // const ISBN_num = "9789029568913"
-    const ISBN_num = searchParams.get('isbn')
+    // const ISBN_num = searchParams.get('isbn')
+    const {isbn} = useParams()
+    console.log(isbn);
     const canvasRef = useRef()
 
     // Initialize loaded state as false
@@ -33,14 +36,14 @@ export const BookViewer = () => {
             if (window.viewer) {
                 let viewer = new window.google.books.DefaultViewer
                 (canvasRef.current);
-                viewer.load('ISBN:' + ISBN_num, alertNotFound);
+                viewer.load('ISBN:' + isbn, alertNotFound);
             } else {
                 window.google.books.load()
                 window.google.books.setOnLoadCallback(() => {
                     let viewer = new window.google.books.DefaultViewer
                     (canvasRef.current);
                     window.viewer = viewer
-                    viewer.load('ISBN:' + ISBN_num, alertNotFound);
+                    viewer.load('ISBN:' + isbn, alertNotFound);
                 })
             }
         }

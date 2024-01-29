@@ -13,10 +13,11 @@ export default function Books({ data }) {
             <p className="authors">AUTHORS</p>
 
             <a href={book.volumeInfo.previewLink}>
-              <img className="image" src={book?.volumeInfo?.imageLinks?.smallThumbnail}/>
+              <img className="image" src={book?.volumeInfo?.imageLinks?.thumbnail}/>
             </a>
             {/*book.volumeInfo.industryIdentifiers[0].identifier*/}
-            <button onClick={() => window.location.href = `/bookviewer?isbn=9781291512472`}>embedded viewer</button>
+            {/* <button onClick={() => window.location.href = book.volumeInfo.industryIdentifiers[0].identifier}>embedded viewer</button> */}
+            <button onClick={() => window.location.href = `/bookviewer/${book.volumeInfo.industryIdentifiers[0].identifier}`}>embedded viewer</button>
           </div>
       ))}
     </div>
