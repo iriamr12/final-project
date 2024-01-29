@@ -1,15 +1,16 @@
-import React from 'react'
+import React from 'react';
+import "./books.css";
 
-export default function Books({ data }) {
+export default function Books({data}) {
     return (
-      <div>
+      <div className="books-container">
         {data.map((book, index) => (
-          <div key={index}>
+          <div className="each-book" key={index}>
             <a href={book.volumeInfo.previewLink}>
             <img src={book?.volumeInfo?.imageLinks?.smallThumbnail}/>
             </a>
             <h3>{book.volumeInfo.title}</h3>
-            <p>Authors: {book.volumeInfo.authors.join(', ')}</p>
+            {/* <p>Authors: {book.volumeInfo.authors.join(', ')}</p> */}
           </div>
         ))}
       </div>
