@@ -12,7 +12,7 @@
 
 h2{
     text-align: center;
-    size: 10px;
+    size: 20px;
     color: gray;
     font-family: "Quicksand", sans-serif;
     font-style: normal;
@@ -29,4 +29,5 @@ h2{
     border-radius: 5px 0 0 5px;
     outline: none;
     color: #9DBFAF;
+    size: 20px;
 }

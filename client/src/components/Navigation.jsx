@@ -1,85 +1,55 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./Navigation.css";
 import profilePhoto from "./1000_F_321955279_TeWobe24GeJ8RSFgbndcM0f6zEVu9P7S.jpg";
 import profilePic from "./profile.png";
 import settingPic from "./setting.png";
 import userPic from "./user.png";
 
-//navigation bar for the homepage
+// navigation bar for the homepage
 
 function Navigation() {
+
+  const [click, setClick] = useState(false);
+  // const [dropdown, setDropdown] = useState(false);
+
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
   return (
-    <div className="navbar-top-div">
-      <nav>
-        <ul>
-          <li className="nav-item">
-            <a className="nav-link" href="/">
-              Home
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/login">
-              Login
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/register">
-              Register
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/search">
-              Search
-            </a>
-          </li>
-        </ul>
-        <img src={profilePhoto} className="user-picture" />
-
-        <div className="sub-menu-wrap">
-          <div className="sub-menu">
-            <div className="user-info">
-              <img
-                src={profilePic}
-                className="rounded-circle"
-                alt="profilePhoto"
-              />
-              <h2>Username</h2>
-             
-              <hr />
-              
-              <a href="#" className="sub-menu-link">
-                <img src={profilePic} className="mini-picture" />
-                <p>Edit profile</p>
-                <span></span>
-              </a>
-
-              <a href="#" className="sub-menu-link">
-                <img src={settingPic} className="mini-picture" />
-                <p>Settings</p>
-                <span></span>
-              </a>
-            </div>
-          </div>
+  
+    <nav>
+       <div className='menu-icon' onClick={handleClick}>
+          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
         </div>
-      </nav>
-    </div>
+        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+        <li className="nav-item">
+             <a className="nav-link" href="/" onClick={closeMobileMenu}>
+               Home
+             </a>
+           </li>
+           <li className="nav-item">
+             <a className="nav-link" href="/login" onClick={closeMobileMenu}>
+               Login
+             </a>
+           </li>
+           <li className="nav-item">
+             <a className="nav-link" href="/register" onClick={closeMobileMenu}>
+               Register
+             </a>
+           </li>
+           <li className="nav-item">
+             <a className="nav-link" href="/search" onClick={closeMobileMenu}>
+               Search
+             </a>
+           </li>
+           <li className="nav-item">
+             <a className="nav-link" href="/profile" onClick={closeMobileMenu}>
+             </a>
+             <img src={profilePhoto} className="navbar-photo"/>
+           </li> 
+           </ul>
+</nav>
   );
 }
 
 export default Navigation;
-
-// <a href="#" className="sub-menu-link">
-//                 <img src={profilePhoto} />
-//                 <p>Edit profile</p>
-//                 <span></span>
-//               </a>
-//               <a href="#" className="sub-menu-link">
-//                 <img src={settingPic} />
-//                 <p>Settings</p>
-//                 <span></span>
-//               </a>
-<a href="#" className="sub-menu-link">
-  <img src={profilePic} />
-  <p>Edit profile</p>
-  <span></span>
-</a>;

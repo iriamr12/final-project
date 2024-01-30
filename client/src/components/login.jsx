@@ -92,6 +92,7 @@ function Login() {
       <div className="card-body-login">
         <div className="login-details-card">
         <h3 className="login-header">Login</h3>
+        <br/>
           <label htmlFor="username">Username:</label>
           <input
             id="username"
@@ -115,11 +116,12 @@ function Login() {
             required
           />
         </div>
-        <div className="d-flex gap-2 justify-content-center">
-          <button className="btn btn-primary" onClick={login}>
+        <div>
+        <br/>
+          <button onClick={login}>
             Log in
           </button>
-          <button className="btn btn-outline-dark ml-2" onClick={logout}>
+          <button onClick={logout}>
             Log out
           </button>
           <p>
