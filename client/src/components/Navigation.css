@@ -1,18 +1,17 @@
- @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  font-family: "Quicksand", sans-serif;
 }
-
 .navbar-top-div {
   width: 100%;
   min-height: 100vh;
   background: #eceaff;
   color: white;
+  margin: auto;
 }
 
 nav{
@@ -25,12 +24,14 @@ nav{
   position: relative;
   height: 80px;
   font-size: 1.2rem;
+  margin: auto;
 }
 
 
 nav ul{
   width: 100%;
   text-align: center;
+  list-style: none;
 
 }
 
@@ -82,6 +83,7 @@ h2{
   color: white;
   text-decoration: none;
   padding: 0.5rem 1rem;
+  display: table;
 }
 
 .nav-links:hover {
@@ -100,6 +102,12 @@ h2{
 
 .menu-icon {
   display: none;
+}
+
+@media screen and (max-width: 1800px) {
+  .NavbarItems {
+    position: relative;
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -125,6 +133,7 @@ h2{
     opacity: 0.9;
     transition: all 0.5s ease;
     z-index: 1;
+    height: 1000%;
   }
 
   .nav-links {
@@ -157,7 +166,7 @@ h2{
   }
 
   .fa-times {
-    color:black;
+    color: black;
     font-size: 2rem;
   }
 
@@ -179,6 +188,4 @@ h2{
     color: #d2d7de;
     transition: 250ms;
   }
-
-  
 }
