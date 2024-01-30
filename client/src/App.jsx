@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import AuthenticationProvider from "./components/context/AuthenticationProvider";
+// import AuthenticationProvider from "./components/context/AuthenticationProvider";
 import Lobby from "./components/Lobby";
 import Register from "./components/register";
 import AuthContext from "./components/context/AuthenticationProvider";
@@ -18,7 +18,7 @@ function App(user){
 
 
     return(
-        <AuthenticationProvider>
+        // <AuthenticationProvider>
            <div>
             {/* TODO this is being disabled for now, as it blocks all the other components. */}
             {/*<Navigation />*/}
@@ -35,7 +35,7 @@ function App(user){
 
             </Routes>
             </div> 
-            </AuthenticationProvider>
+            // </AuthenticationProvider>
       
     ) 
 
