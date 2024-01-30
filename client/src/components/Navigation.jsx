@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
 import "./Navigation.css";
-import profilePhoto from "./1000_F_321955279_TeWobe24GeJ8RSFgbndcM0f6zEVu9P7S.jpg";
-import profilePic from "./profile.png";
-import settingPic from "./setting.png";
-import userPic from "./user.png";
+// import profilePhoto from "/client/public/1000_F_321955279_TeWobe24GeJ8RSFgbndcM0f6zEVu9P7S.jpg";
+// import profilePic from "client/public/profile.png";
+// import settingPic from "client/public/setting.png";
+
 
 // navigation bar for the homepage
 
@@ -45,7 +45,7 @@ function Navigation() {
            <li className="nav-item">
              <a className="nav-link" href="/profile" onClick={closeMobileMenu}>
              </a>
-             <img src={profilePhoto} className="navbar-photo"/>
+            
            </li> 
            </ul>
 </nav>
@@ -53,3 +53,5 @@ function Navigation() {
 }
 
 export default Navigation;
+
+// <img src={profilePhoto} className="navbar-photo"/>

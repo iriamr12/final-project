@@ -21,7 +21,7 @@ function App(user){
         // <AuthenticationProvider>
            <div>
             {/* TODO this is being disabled for now, as it blocks all the other components. */}
-            {/*<Navigation />*/}
+            <Navigation />
             <Routes>
                 <Route path="/" element={<Lobby/>}/>
                 <Route path="/register" element={<Register />} /> 
