@@ -1,3 +1,6 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AuthenticationProvider from "./components/context/AuthenticationProvider";
 import Lobby from "./components/Lobby";
 import Register from "./components/register";
 import {Routes, Route } from 'react-router-dom'
@@ -39,4 +42,5 @@ function App(user){
     ) 
 
 }
+
 export default App;
