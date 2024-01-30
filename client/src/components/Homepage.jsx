@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import BookForm from "../components/BookForm";
 import axios from "axios";
 
-import Books from "./Books/Books";
+import Books from "./Books";
 import Type from "./Type/Type";
 
 export default function Homepage() {

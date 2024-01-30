@@ -3,18 +3,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AuthenticationProvider from "./components/context/AuthenticationProvider";
 import Lobby from "./components/Lobby";
 import Register from "./components/register";
-import {Routes, Route } from 'react-router-dom'
-import AuthContext from "./components/context/AuthenticationProvider";
 import { useState } from "react";
-import React from "react";
 import Login from "./components/Login";
-import AuthenticationProvider from "./components/context/AuthenticationProvider";
 import Homepage from "./components/homepage";
 import BookSearch from "./components/Booksearch";
 import Navigation from "./components/Navigation";
 import BookProfile from "./components/BookProfile.jsx";
 import {BookViewer} from "./components/BookViewer.jsx";
-
+import CommentBox from "./components/CommentBox.jsx";
+import AddToFavoritesButton from "./components/AddToFavoritesButton.jsx";
 
 function App(user){
 
@@ -32,6 +29,7 @@ function App(user){
                 <Route path="/search" element={<BookSearch />} />
                 <Route path="/bookprofile" element={<BookProfile />} />
                 <Route path="/bookviewer/:isbn" element={<BookViewer />} />
+                
                 
 
 
