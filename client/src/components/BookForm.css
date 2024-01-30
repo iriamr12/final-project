@@ -6,6 +6,7 @@ input{
   border-radius: 10px 10px 10px 10px;
   outline: none;
   color: black;
+  size: 30px;
 }
 
 .searchButton {
@@ -17,5 +18,5 @@ input{
     color: #fff;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 30px;
   }
