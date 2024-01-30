@@ -1,12 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import AuthenticationProvider from "./components/context/AuthenticationProvider";
 import Lobby from "./components/Lobby";
 import Register from "./components/register";
-import {Routes, Route } from 'react-router-dom'
 import AuthContext from "./components/context/AuthenticationProvider";
 import { useState } from "react";
-import React from "react";
 import Login from "./components/Login";
 import AuthenticationProvider from "./components/context/AuthenticationProvider";
 import Homepage from "./components/homepage";
