@@ -1,5 +1,5 @@
 import Lobby from "./components/Lobby";
-import Register from "./components/Register";
+import Register from "./components/register";
 import {BrowserRouter, Routes, Route } from 'react-router-dom'
 import AuthContext from "./components/context/AuthenticationProvider";
 import { useState } from "react";
