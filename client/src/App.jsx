@@ -20,7 +20,7 @@ function App(user){
     return(
         // <AuthenticationProvider>
            <div>
-            {/* TODO this is being disabled for now, as it blocks all the other components. */}
+            
             <Navigation />
             <Routes>
                 <Route path="/" element={<Lobby/>}/>

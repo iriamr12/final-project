@@ -60,10 +60,9 @@
 // }
 import { useEffect, useRef, useState } from "react";
 import "./BookViewer.css";
-import { useParams } from 'react-router-dom';
 
-export const BookViewer = () => {
-  const { id } = useParams();
+export const BookViewer = ({ bookId}) => {
+    console.log(`bookId${bookId}`)
   const canvasRef = useRef();
   // Initialize loaded state as false
   const [loaded, setLoaded] = useState(false);
@@ -96,9 +95,9 @@ export const BookViewer = () => {
   useEffect(() => {
     if (loaded) {
       const viewer = new window.google.books.DefaultViewer(canvasRef.current);
-      viewer.load(  id, alertNotFound);
+      viewer.load(bookId, alertNotFound);
     }
-  }, [loaded, id]);
+  }, [loaded, bookId]);
 
   return (
     <div>
