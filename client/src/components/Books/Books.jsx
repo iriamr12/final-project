@@ -1,5 +1,5 @@
 import React from 'react';
-import "./books.css";
+import "../books.css";
 
 export default function Books({data}) {
     return (
