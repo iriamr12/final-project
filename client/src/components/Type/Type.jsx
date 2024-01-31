@@ -107,6 +107,7 @@ export default function Type ({data1}) {
             <Link to={`/book/${index}`}>
               <img className="imagen" src={book?.volumeInfo?.imageLinks?.smallThumbnail}/>
             </Link>
+            <button onClick={() => window.location.href = `/bookviewer/${book.id}`}>Read me</button>
             {/* </a> */}
             {/* <p>Authors: {book.volumeInfo.authors ? book.volumeInfo.authors.join(', ') : 'N/A'}</p> */}
           </div>

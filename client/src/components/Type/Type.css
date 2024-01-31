@@ -1,5 +1,52 @@
-.books-container{
-    display: flex;
-    flex-direction: row;
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+div{
+    padding: 2px;
 }
 
+.book-list{
+    display: grid;
+    min-height: 80vh;
+    width: 100;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
+    justify-content: left;
+    position: relative;
+    padding: 50px;
+    padding-bottom: 50px;
+    gap: 2rem;
+    text-align: left;
+}
+
+.books{
+   
+        width: 325px;
+        height: 450px;
+        padding: 20px;
+        border-radius: 30px;
+        background: lightgrey;
+        padding-bottom: 50px;
+      
+}
+
+img{
+    width: 150px;
+    height: 250px;
+}
+
+.image{
+    text-align: left;
+}
+
+h3, p, .titleName {
+    font-family: "Quicksand", sans-serif;
+    font-size: 15px;
+    align-items: left;
+}
+
+.title, .authors {
+    font-family: "Quicksand", sans-serif;
+    font-size: 12px;
+    padding: 0;
+    
+}
