@@ -10,10 +10,11 @@ export default function Books({data}) {
             <img src={book?.volumeInfo?.imageLinks?.smallThumbnail}/>
             </a>
             <h3>{book.volumeInfo.title}</h3>
-            {/* <p>Authors: {book.volumeInfo.authors.join(', ')}</p> */}
+          
+            <button onClick={() => window.location.href = `/bookviewer/${book.id}`}>Read me</button>
+            {/* <p>Authors: {book.volumeInfo.authors.join(', ')}</p>*/}
           </div>
         ))}
       </div>
     );
   }
-  

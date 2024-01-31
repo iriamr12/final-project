@@ -29,7 +29,7 @@ function App(user){
                 <Route path="/homepage" element={<Homepage />} />
                 <Route path="/search" element={<BookSearch />} />
                 <Route path="/bookprofile" element={<BookProfile />} />
-                <Route path="/bookviewer/:isbn" element={<BookViewer />} />
+                <Route path="/bookviewer/:id" element={<BookViewer />} />
                 
 
 
