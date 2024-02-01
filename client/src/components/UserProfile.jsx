@@ -10,7 +10,7 @@ console.log(auth.favoriteBooks)
       <h2>Favorite Books</h2>
       <ul>
         {auth.favoriteBooks.map((book, index) => (
-          <li key={index}>
+          <li className="book-list" key={index}>
             {book.volumeInfo.title}
             <img src={book?.volumeInfo?.imageLinks?.smallThumbnail}/>
             </li>
