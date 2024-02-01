@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import "./Navigation.css";
+import { Link } from "react-router-dom";
 // import profilePhoto from "/client/public/1000_F_321955279_TeWobe24GeJ8RSFgbndcM0f6zEVu9P7S.jpg";
 // import profilePic from "client/public/profile.png";
 // import settingPic from "client/public/setting.png";
@@ -23,30 +24,35 @@ function Navigation() {
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
         <li className="nav-item">
-             <a className="nav-link" href="/" onClick={closeMobileMenu}>
+             <Link className="nav-link" to="/booksearch" onClick={closeMobileMenu}>
                Home
-             </a>
+             </Link>
            </li>
            <li className="nav-item">
-             <a className="nav-link" href="/login" onClick={closeMobileMenu}>
+             <Link className="nav-link" to="/login" onClick={closeMobileMenu}>
                Login
-             </a>
+             </Link>
            </li>
            <li className="nav-item">
-             <a className="nav-link" href="/register" onClick={closeMobileMenu}>
+             <Link className="nav-link" to="/register" onClick={closeMobileMenu}>
                Register
-             </a>
+             </Link>
            </li>
            <li className="nav-item">
-             <a className="nav-link" href="/search" onClick={closeMobileMenu}>
+             <Link className="nav-link" to="/userProfile" onClick={closeMobileMenu}>
+               Profile
+             </Link>
+           </li>
+           {/* <li className="nav-item">
+             <Link className="nav-link" to="/search" onClick={closeMobileMenu}>
                Search
-             </a>
-           </li>
-           <li className="nav-item">
-             <a className="nav-link" href="/profile" onClick={closeMobileMenu}>
-             </a>
+             </Link>
+           </li> */}
+           {/* <li className="nav-item">
+             <Link className="nav-link" to="/profile" onClick={closeMobileMenu}>
+             </Link>
             
-           </li> 
+           </li>  */}
            </ul>
 </nav>
   );

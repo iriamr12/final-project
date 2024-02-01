@@ -1,59 +1,3 @@
-// import { useRef, useEffect, useState, useContext } from "react";
-// import AuthContext from "../context/AuthProvider";
-// import axios from "../api/axios";
-// const LOGIN_URL = "/auth";
-// import "./login.css";
-
-// const Login = () => {
-//   const { setAuth } = useContext(AuthContext);
-//   const userRef = useRef();
-//   const errRef = useRef();
-
-//   const [user, setUser] = useState("");
-//   const [password, setPassword] = useState("");
-//   const [errMsg, setErrMsg] = useState("");
-//   const [success, setSuccess] = useState(false);
-
-//   useEffect(() => {
-//     userRef.current.focus();
-//   }, []);
-
-//   useEffect(() => {
-//     setErrMsg('');
-//   }, [user, password]);
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     try {
-//       const response = await axios.post(
-//         LOGIN_URL,
-//         JSON.stringify({ user, password }),
-//         {
-//           headers: { "Content-Type": "application/json" },
-//           withCredentials: true,
-//         }
-//       );
-//       console.log(JSON.stringify(response?.data)); //check if there is a response
-//       const accessToken = response?.data?.accessToken;
-//       const roles = response?.data?.roles; //should be an array of roles
-//       setAuth({ user, password, roles, accessToken });
-//       setUser('');
-//       setPassword('');
-//       setSuccess(true);
-//     } catch (err) {
-//       if (!err?.response) {
-//         setErrMsg('No server response');
-//       } else if (err.response?.status === 400) {
-//         setErrMsg('Missing username or password');
-//       } else if (err.response?.status === 401) {
-//         setErrMsg('Unauthorised');
-//       } else {
-//         setErrMsg('Login failed');
-//       }
-//       errRef.current.focus();
-//     }
-//   };
 
 import { useState } from "react";
 import { authContext } from "./context/AuthenticationProvider";
@@ -78,9 +22,18 @@ function Login() {
     setCredentials({ ...credentials, [name]: value });
   };
 
+  // const login = async () => {
+  //   auth.login(credentials);
+  // };
+
   const login = async () => {
-    auth.login(credentials);
+    try {
+      await auth.login(credentials);
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
   };
+  
 
   const logout = () => {
     //localStorage.removeItem("token");
