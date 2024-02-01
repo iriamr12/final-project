@@ -8,6 +8,7 @@ div {
   min-height: 80vh;
   width: 100;
   grid-template-columns: repeat(3, 1fr);
+  list-style: none;
   overflow: hidden;
   justify-content: left;
   position: relative;
