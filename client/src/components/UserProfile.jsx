@@ -1,6 +1,8 @@
 // Example UserProfile component
 import React, { useContext } from 'react';
 import { authContext } from './context/AuthenticationProvider';
+import "./UserProfile.css";
+
 
 const UserProfile = () => {
   const auth = useContext(authContext);
