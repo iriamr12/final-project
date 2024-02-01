@@ -4,7 +4,7 @@ div{
     padding: 2px;
 }
 
-.book-list{
+.books-container{
     display: grid;
     min-height: 80vh;
     width: 100;
@@ -18,7 +18,7 @@ div{
     text-align: left;
 }
 
-.books{
+.each-book{
    
         width: 325px;
         height: 450px;
@@ -49,4 +49,33 @@ h3, p, .titleName {
     font-size: 12px;
     padding: 0;
     
+}
+
+
+@media screen and (max-width: 2560px) {
+  .book-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 1139px) {
+  .books-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .books-container {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .books-container {
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
 }
