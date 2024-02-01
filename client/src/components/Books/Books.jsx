@@ -1,7 +1,20 @@
 import React from 'react';
 import "./Books.css";
+import { authContext } from '../context/AuthenticationProvider';
+import { useContext } from "react";
 
 export default function Books({data}) {
+
+  const auth = useContext(authContext);
+
+  const addToFavorites = (book) => {
+    // Call the addToFavorites function from the auth context
+    
+    auth.addToFavorites(book);
+   
+  };
+ console.log(auth.favoriteBooks)
+
     return (
       <div className="books-container">
         {data.map((book, index) => (
@@ -12,6 +25,7 @@ export default function Books({data}) {
             <h3>{book.volumeInfo.title}</h3>
           
             <button onClick={() => window.location.href = `/bookviewer/${book.id}`}>Read me</button>
+            <button onClick={() => addToFavorites(book)}>Add to Favorites</button>
             {/* <p>Authors: {book.volumeInfo.authors.join(', ')}</p>*/}
           </div>
         ))}

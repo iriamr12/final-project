@@ -1,6 +1,6 @@
 import React from "react";
 import Login from '../components/Login';
-
+import './Lobby.css'
 
 export default function Lobby () {
 
