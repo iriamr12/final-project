@@ -9,8 +9,9 @@ const UserProfile = () => {
 console.log(auth.favoriteBooks)
   return (
     <div>
+      <br />
       <h2>Favorite Books</h2>
-      <ul>
+      <ul className="books-container">
         {auth.favoriteBooks.map((book, index) => (
           <li className="book-list" key={index}>
             {book.volumeInfo.title}
