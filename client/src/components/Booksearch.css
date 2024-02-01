@@ -34,5 +34,7 @@ h2{
 
 .book-type {
   font-size: 30px;
+  position: relative;
+  bottom: 700px
 }
 

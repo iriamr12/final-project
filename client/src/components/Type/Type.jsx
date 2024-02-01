@@ -84,6 +84,7 @@
 
 import React from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
+import "./Type.css"
 
 export default function Type ({data1}) {
   console.log('Received data:', data1);
@@ -117,11 +118,10 @@ export default function Type ({data1}) {
   };
 
   return (
-    <div>
+    <div className='titles'>
       {renderBooks('Education')}
       {renderBooks('Fiction')}
       {renderBooks('Cooking')}
-      {/* Add more categories as needed */}
     </div>
   );
 }
