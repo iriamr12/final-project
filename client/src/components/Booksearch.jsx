@@ -74,7 +74,7 @@ function BookSearch() {
         {loading && <h2>Loading...</h2>}
         {error && <h2 style={{ color: "red" }}>{error}</h2>}
         </div>
-      <div>
+      <div className="book-type">
         {booksType.length > 0 ? (
           <Type data1={booksType}/>
         ) : (
